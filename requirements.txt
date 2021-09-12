@@ -1,0 +1,6 @@
+bleak==0.12.1
+cryptography==2.6.1
+pexpect==4.8.0
+PyBluez==0.23
+pygatt==4.0.5
+requests==2.21.0
