@@ -1,14 +1,12 @@
 import json
+import config
 from message_composer import MessageComposer
 
-f = open('config.json',)
-config = json.load(f)
-
-def json_to_action(json_str):
+def get_action(json_str):
     data = json.loads(json_str)
 
     device = data['device']
-    address = config['devices'][device]
+    address = config.get_config()['devices'][device]
 
     command = data['command']
     value = data['value']

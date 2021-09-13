@@ -5,22 +5,32 @@ Wrapper for cheap LED strip with Bluetooth LE
 **NOTE:** *This is early phase of development and not everything may be working properly.*
 
 ---
-## First usage
-First install dependencies:
+## First usage (server)
+1. Install dependencies:
 ```shell
 pip3 install -r requirements.txt
 ```
-Next, fill JSON config just like below: **[src/config.json]**:
+2. Fill JSON config just like below: **[server/src/config.json]**:
 ```json
 {
     "devices": {
         "ELK-BLEDOM": "XX:XX:XX:XX:XX:XX"
+    },
+    "server": {
+        "ip": "0.0.0.0",
+        "port": 12345
     }
 }
 ```
-And let's try to run it:
+3. Let's try to run it:
 ```shell
-python3 main.py
+./main.py
+```
+
+## First usage (client)
+There is no client app yet. Instead you can use the netcat tool to send JSON commands (UDP protocol):
+```shell
+netcat -u <ip> <port>
 ```
 
 ## Examples
@@ -66,7 +76,8 @@ python3 main.py
 
 ## TODO
 - More commands
-- UDP listener and GUI client apps
+- BLE scanner
+- GUI client apps
 - Integration with Google Assistant
 
 ## References

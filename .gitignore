@@ -130,3 +130,7 @@ dmypy.json
 
 # Visual Studio Code configs
 ble_led_strip.code-workspace
+
+# User files
+server/src/config.json
+server/src/logs/
